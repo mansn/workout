@@ -1,5 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 .App {
   margin: 1rem;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 80%;
+}
+
+.workout-program {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.workout {
+  display: grid;
+}
+
+legend {
+  border: 5px red solid;
+  display: block;
 }
