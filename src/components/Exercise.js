@@ -30,10 +30,10 @@ const Exercise = props => {
   }
 
   return (
-    <div className="exercise" key={props.header}>
+    <li className="exercise" key={props.header}>
       <h3>{`${props.header} (${props.sets}x ${props.repsRange})`}</h3>
       {inputFields}
-    </div>
+    </li>
   );
 };
 
