@@ -9,8 +9,37 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.workout {
+  margin-right: 10rem;
+}
+
 h1 {
   margin-bottom: 2rem;
+}
+
+div.exercise {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.exercise-input {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'reps weight'
+    'comment comment';
+}
+
+.exercise-input input {
+  grid-area: comment;
+}
+
+.exercise-input select#reps {
+  grid-area: reps;
+}
+
+.exercise-input select#weight {
+  grid-area: weight;
 }
 
 .container {
@@ -27,7 +56,13 @@ h1 {
   display: grid;
 }
 
+fieldset {
+  padding: 0 1rem;
+}
+
 legend {
-  border: 5px red solid;
-  display: block;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
 }

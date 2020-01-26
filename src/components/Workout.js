@@ -5,30 +5,37 @@ const Workout = () => {
   return (
     <div className="workout-program">
       <div className="workout">
-        <h2>Workout A - Back & Shoulders</h2>
-        <Exercise header="Exercise: Deadlift (3x 4-5)" sets={3}></Exercise>
-        <Exercise header="Exercise: Military Press (3x 8-12)" sets={3}></Exercise>
-        <Exercise header="Exercise: Sidolyft (3x 8-12)" sets={3}></Exercise>
-        <Exercise header="Exercise: Chin-ups (3x 6-8)" sets={3}></Exercise>
-        <Exercise header="Exercise: Row (3x 6-8)" sets={3}></Exercise>
-        <Exercise header="Exercise: Rygglyft (3x 8-12)" sets={3}></Exercise>
+        <fieldset className="exercises">
+          <legend>Workout A - Back & Shoulders</legend>
+          <Exercise header="Deadlift" repsRange="4-5" sets={3}></Exercise>
+          <Exercise header="Military Press" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Sidolyft" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Chin-ups" repsRange="6-8" sets={3}></Exercise>
+          <Exercise header="Row" repsRange="6-8" sets={3}></Exercise>
+          <Exercise header="Rygglyft" repsRange="8-12" sets={3}></Exercise>
+        </fieldset>
       </div>
       <div className="workout">
-        <h2>Workout B - Disco</h2>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
+        <fieldset className="exercises">
+          <legend>Workout B - Disco</legend>
+          <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+        </fieldset>
       </div>
-
       <div className="workout">
-        <h2>Workout C - #Legday</h2>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
-        <div className="exercise">Exercise: Rygglyft</div>
+        <fieldset className="exercises">
+          <legend>Workout C - #Legday</legend>
+          <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+          <Exercise header="Pladeholder" repsRange="8-12" sets={3}></Exercise>
+        </fieldset>
       </div>
     </div>
   );
