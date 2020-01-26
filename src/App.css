@@ -50,10 +50,6 @@ li.exercise {
   grid-area: weight;
 }
 
-.container {
-  width: 80%;
-}
-
 .workout-program {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
