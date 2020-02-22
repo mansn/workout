@@ -31,7 +31,10 @@ const Exercise = props => {
 
   return (
     <li className="exercise" key={props.header}>
-      <h3>{`${props.header} (${props.sets}x ${props.repsRange})`}</h3>
+      <div className="exercise-meta">
+        <h3>{`${props.header}`}</h3>
+        <h3>{`(${props.sets}x ${props.repsRange})`}</h3>
+      </div>
       {inputFields}
     </li>
   );
