@@ -21,12 +21,10 @@ const Workout = () => {
         <fieldset className="exercises">
           <legend>Workout B - Disco</legend>
           <ul className="exercises">
-            <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
-            <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
-            <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
-            <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
-            <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
-            <Exercise header="Placeholder" repsRange="8-12" sets={3}></Exercise>
+            <Exercise header="Bench Press" repsRange="6-8" sets={3}></Exercise>
+            <Exercise header="Inc. Bench Press" repsRange="6-8" sets={3}></Exercise>
+            <Exercise header="Barbell Curl" repsRange="6-8" sets={3}></Exercise>
+            <Exercise header="Pushdowns" repsRange="6-8" sets={3}></Exercise>
           </ul>
         </fieldset>
       </div>
