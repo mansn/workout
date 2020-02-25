@@ -3,7 +3,8 @@ node_modules/
 jspm_packages/
 
 # Generated output
-build
+dist/
+build/
 
 # Local Netlify folder
 .netlify
