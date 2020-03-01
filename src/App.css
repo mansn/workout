@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+@keyframes crazyRotate {
+  to {
+    transform: rotateZ(360deg) rotateY(360deg) rotateX(360deg);
+  }
+}
+
 html {
   background-color: #212529;
 }
@@ -11,6 +17,7 @@ html {
 select {
   border: 1px solid #aaa;
   padding: 0.2em 0.5em;
+  width: 100%;
 }
 
 .App {
@@ -46,7 +53,7 @@ li.exercise {
     'comment comment';
 }
 
-.exercise-input>input{
+.exercise-input > input {
   background-color: white;
 }
 
