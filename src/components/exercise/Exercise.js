@@ -1,38 +1,13 @@
-import React, { useReducer } from 'react';
-
-const INITIAL_STATE = {
-  reps: 1,
-  weight: 70,
-  comment: ''
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'updateFieldValue':
-      return { ...state, [action.field]: [action.value] };
-
-    default:
-      return INITIAL_STATE;
-  }
-};
-
-const populateDropdown = (nbrOfOptions, incrementValue) => {
-  return Array.from(Array(nbrOfOptions).keys()).map(value => {
-    return <option value={value+1} key={value+1}>{value+1}</option>;
-  });
-};
+import React from 'react';
+import DropDown from '../DropDown';
 
 const Exercise = props => {
-  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   const inputFields = [];
   for (let i = 0; i < props.sets; i++) {
     inputFields.push(
       <div className="exercise-input" key={`set-no-${i}`}>
         <label>
-          <select name="repetitions" id="reps">
-            <option value="">{state.reps}</option>
-            {populateDropdown(props.repsRange.max)}
-          </select>
+          <DropDown name="repetitions" id="reps" data={props.repsRange.max} />
         </label>
         <label>
           <select name="weight" id="weight">
