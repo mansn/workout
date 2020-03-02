@@ -95,7 +95,7 @@ legend {
 
   .workout {
     display: grid;
-    place-content: space-evenly;
+    place-content: baseline center;
     margin-right: 2em;
   }
 
