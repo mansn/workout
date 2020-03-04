@@ -1,9 +1,7 @@
 import React, { useReducer } from 'react';
 
 const INITIAL_STATE = {
-  reps: '1',
-  weight: 70,
-  comment: ''
+  value: ''
 };
 
 const reducer = (state, action) => {
@@ -16,25 +14,25 @@ const reducer = (state, action) => {
   }
 };
 
-const populateDropdown = (nbrOfOptions, incrementValue) => {
-  return Array.from(Array(nbrOfOptions).keys()).map(value => {
+const populateDropdown = (id, data) => {
+  return data.map(value => {
     return (
-      <option value={value + 1} key={value + 1}>
-        {value + 1}
+      <option value={value} key={`${id}-${value}`}>
+        {value}
       </option>
     );
   });
 };
 
-const DropDown = ({ name, id, defaultOption, data }) => {
+const DropDown = ({ name, id, data }) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   const UpdateFieldValue = field => event => {
     dispatch({ type: 'updateFieldValue', field, value: event.target.value });
   };
 
   return (
-    <select name={name} id={id} value={state.reps} onChange={UpdateFieldValue('reps')}>
-      {populateDropdown(data)}
+    <select name={name} id={id} value={state.value} onChange={UpdateFieldValue('value')}>
+      {populateDropdown(id, data)}
     </select>
   );
 };

@@ -1,0 +1,117 @@
+{
+  "workouts": [
+    {
+      "title": "Workout A - Back & Shoulders",
+      "exercises": [
+        {
+          "title": "Deadlift",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 4, "max": 5 },
+          "sets": 3
+        },
+        {
+          "title": "Military Press",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          "recommendedReps": { "min": 8, "max": 12 },
+          "sets": 3
+        },
+        {
+          "title": "Sidolyft",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 8, "max": 12 },
+          "sets": 3
+        },
+        {
+          "title": "Chin-ups",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 6, "max": 8 },
+          "sets": 3
+        },
+        {
+          "title": "Row",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 6, "max": 8 },
+          "sets": 3
+        },
+        {
+          "title": "Rygglyft",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 8, "max": 12 },
+          "sets": 3
+        }
+      ]
+    },
+    {
+      "title": "Workout B - Disco",
+      "exercises": [
+        {
+          "title": "Bench Press",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 6, "max": 8 },
+          "sets": 3
+        },
+        {
+          "title": "Inc. Bench Press",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 6, "max": 8 },
+          "sets": 3
+        },
+        {
+          "title": "Barbell Curl",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 6, "max": 8 },
+          "sets": 3
+        },
+        {
+          "title": "Pushdowns",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 6, "max": 8 },
+          "sets": 3
+        }
+      ]
+    },
+    {
+      "title": "Workout C - #Legday",
+      "exercises": [
+        {
+          "title": "Placeholder 1",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 8, "max": 12 },
+          "sets": 3
+        },
+        {
+          "title": "Placeholder 2",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 8, "max": 12 },
+          "sets": 3
+        },
+        {
+          "title": "Placeholder 3",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 8, "max": 12 },
+          "sets": 3
+        },
+        {
+          "title": "Placeholder 4",
+          "weights": [80, 85, 90, 95],
+          "reps": [1, 2, 3, 4, 5],
+          "recommendedReps": { "min": 8, "max": 12 },
+          "sets": 3
+        }
+      ]
+    }
+  ]
+}
