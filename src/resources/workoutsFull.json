@@ -8,42 +8,126 @@
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 4, "max": 5 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Military Press",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
           "recommendedReps": { "min": 8, "max": 12 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Sidolyft",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 8, "max": 12 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Chin-ups",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 6, "max": 8 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Row",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 6, "max": 8 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Rygglyft",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 8, "max": 12 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         }
       ]
     },
@@ -55,28 +139,84 @@
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 6, "max": 8 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Inc. Bench Press",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 6, "max": 8 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Barbell Curl",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 6, "max": 8 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Pushdowns",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 6, "max": 8 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         }
       ]
     },
@@ -88,28 +228,84 @@
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 8, "max": 12 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Placeholder 2",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 8, "max": 12 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Placeholder 3",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 8, "max": 12 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         },
         {
           "title": "Placeholder 4",
           "weights": [80, 85, 90, 95],
           "reps": [1, 2, 3, 4, 5],
           "recommendedReps": { "min": 8, "max": 12 },
-          "sets": 3
+          "sets": 3,
+          "currentResult": {
+            "1": {
+              "weight": 80,
+              "reps": 4
+            },
+            "2": {
+              "weight": 80,
+              "reps": 3
+            },
+            "3": {
+              "weight": 80,
+              "reps": 2
+            }
+          }
         }
       ]
     }

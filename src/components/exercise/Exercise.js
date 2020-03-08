@@ -7,10 +7,15 @@ const Exercise = props => {
     inputFields.push(
       <div className="exercise-input" key={`${props.title}-set-${i}`}>
         <label>
-          <DropDown name="repetitions" id={`${props.title}-reps-${i}`} data={props.reps} />
+          <DropDown
+            name="repetitions"
+            id={`${props.title}-reps-${i}`}
+            data={props.reps}
+            currentValue={props.currentResult[i + 1].reps}
+          />
         </label>
         <label>
-          <DropDown name="weight" id={`${props.title}-weight-${i}`} data={props.weights} />
+          <DropDown name="weight" id={`${props.title}-weight-${i}`} data={props.weights} currentValue={props.currentResult[i + 1].weight}/>
         </label>
         <input placeholder="Comment..."></input>
       </div>

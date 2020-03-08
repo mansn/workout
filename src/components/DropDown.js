@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 
 const INITIAL_STATE = {
   value: ''
@@ -24,8 +24,11 @@ const populateDropdown = (id, data) => {
   });
 };
 
-const DropDown = ({ name, id, data }) => {
+const DropDown = ({ name, id, data, currentValue }) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  useEffect(() => {
+    dispatch({ type: 'updateFieldValue', field: 'value', value: currentValue });
+  }, [currentValue]);
   const UpdateFieldValue = field => event => {
     dispatch({ type: 'updateFieldValue', field, value: event.target.value });
   };

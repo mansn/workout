@@ -11,19 +11,23 @@ const Workout = () => {
             <fieldset>
               <legend>{title}</legend>
               <ul className="exercises">
-                {exercises.map(({ title, weights, reps, sets, recommendedReps }, i) => {
-                  return (
-                    <Exercise
-                      title={title}
-                      weights={weights}
-                      reps={reps}
-                      recommendedReps={recommendedReps}
-                      sets={sets}
-                      key={i}
-                    />
-                  );
-                })}
+                {exercises.map(
+                  ({ title, weights, reps, sets, recommendedReps, currentResult }, i) => {
+                    return (
+                      <Exercise
+                        title={title}
+                        weights={weights}
+                        reps={reps}
+                        recommendedReps={recommendedReps}
+                        currentResult={currentResult}
+                        sets={sets}
+                        key={i}
+                      />
+                    );
+                  }
+                )}
               </ul>
+              <button className="save">Save</button>
             </fieldset>
           </div>
         );

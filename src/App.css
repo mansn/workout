@@ -79,6 +79,7 @@ li.exercise {
 }
 
 fieldset {
+  border-radius: 0.25rem;
   padding: 0 1em;
 }
 
@@ -96,8 +97,10 @@ legend {
 button.save {
   padding: 0.5rem;
   border-radius: 0.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
   cursor: pointer;
+  background-color: rgb(221, 221, 221);
 }
 
 /* ----- DESKTOP -----  */
