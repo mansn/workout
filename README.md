@@ -4,3 +4,15 @@
 I keep my results from gym sessions in the Notes app in my iPhone 🤪. I want to change that. I'm sure there are perfect existing apps for this, but I want to build something myself.
 
 So, this is yet another app for me to build for learning purposes.
+
+## Install
+
+```sh
+npm install
+```
+
+## Run
+
+```sh
+npm start
+```
