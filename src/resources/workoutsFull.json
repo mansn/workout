@@ -1,6 +1,7 @@
 {
-  "workouts": [
+  "workoutList": [
     {
+      "id": 1,
       "title": "Workout A - Back & Shoulders",
       "exercises": [
         {
@@ -132,6 +133,7 @@
       ]
     },
     {
+      "id": 2,
       "title": "Workout B - Disco",
       "exercises": [
         {
@@ -221,6 +223,7 @@
       ]
     },
     {
+      "id": 3,
       "title": "Workout C - #Legday",
       "exercises": [
         {

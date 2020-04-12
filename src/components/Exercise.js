@@ -1,5 +1,5 @@
 import React from 'react';
-import DropDown from '../DropDown';
+import DropDown from './DropDown';
 
 const Exercise = props => {
   const inputFields = [];
@@ -12,10 +12,23 @@ const Exercise = props => {
             id={`${props.title}-reps-${i}`}
             data={props.reps}
             currentValue={props.currentResult[i + 1].reps}
+            workouts={props.workouts}
+            exerciseId={props.exerciseId}
+            workoutId={props.workoutId}
+            setWorkouts={props.setWorkouts}
           />
         </label>
         <label>
-          <DropDown name="weight" id={`${props.title}-weight-${i}`} data={props.weights} currentValue={props.currentResult[i + 1].weight}/>
+          <DropDown
+            name="weight"
+            id={`${props.title}-weight-${i}`}
+            data={props.weights}
+            currentValue={props.currentResult[i + 1].weight}
+            workouts={props.workouts}
+            exerciseId={props.exerciseId}
+            workoutId={props.workoutId}
+            setWorkouts={props.setWorkouts}
+          />
         </label>
         <input placeholder="Comment..."></input>
       </div>

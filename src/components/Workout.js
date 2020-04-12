@@ -1,18 +1,26 @@
-import React from 'react';
-import Exercise from './exercise/Exercise';
-import { workouts } from '../resources/workoutsFull.json';
+import React, { useState, useEffect } from 'react';
+import Exercise from './Exercise';
+import { workoutList } from '../resources/workoutsFull.json';
 
 const Workout = () => {
+  const [workouts, setWorkouts] = useState([]);
+
+  useEffect(() => {
+    if (workouts.length === 0) {
+      setWorkouts(workoutList);
+    }
+  }, [workoutList]);
+
   return (
     <div className="workout-program">
-      {workouts.map(({ title, exercises }, i) => {
+      {workouts.map(({ title, exercises }, workoutId) => {
         return (
-          <div className="workout" key={i}>
+          <div className="workout" key={workoutId}>
             <fieldset>
               <legend>{title}</legend>
               <ul className="exercises">
                 {exercises.map(
-                  ({ title, weights, reps, sets, recommendedReps, currentResult }, i) => {
+                  ({ title, weights, reps, sets, recommendedReps, currentResult }, exerciseId) => {
                     return (
                       <Exercise
                         title={title}
@@ -21,7 +29,11 @@ const Workout = () => {
                         recommendedReps={recommendedReps}
                         currentResult={currentResult}
                         sets={sets}
-                        key={i}
+                        key={exerciseId}
+                        workouts={workouts}
+                        exerciseId={parseInt(exerciseId)}
+                        workoutId={parseInt(workoutId + 1)}
+                        setWorkouts={setWorkouts}
                       />
                     );
                   }

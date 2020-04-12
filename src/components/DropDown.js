@@ -1,18 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
-
-const INITIAL_STATE = {
-  value: ''
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'updateFieldValue':
-      return { ...state, [action.field]: [action.value] };
-
-    default:
-      return INITIAL_STATE;
-  }
-};
+import React from 'react';
 
 const populateDropdown = (id, data) => {
   return data.map(value => {
@@ -24,17 +10,27 @@ const populateDropdown = (id, data) => {
   });
 };
 
-const DropDown = ({ name, id, data, currentValue }) => {
-  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
-  useEffect(() => {
-    dispatch({ type: 'updateFieldValue', field: 'value', value: currentValue });
-  }, [currentValue]);
-  const UpdateFieldValue = field => event => {
-    dispatch({ type: 'updateFieldValue', field, value: event.target.value });
+const DropDown = ({
+  name,
+  id,
+  data,
+  currentValue,
+  exerciseId,
+  workoutId,
+  workouts,
+  setWorkouts,
+}) => {
+  const UpdateFieldValue = event => {
+    const updatedWorkouts = JSON.parse(JSON.stringify(workouts));
+    const set = parseInt(id[id.length - 1]) + 1;
+    updatedWorkouts[workoutId - 1].exercises[exerciseId].currentResult[set][name] = parseInt(
+      event.target.value
+    );
+    setWorkouts(updatedWorkouts);
   };
 
   return (
-    <select name={name} id={id} value={state.value} onChange={UpdateFieldValue('value')}>
+    <select name={name} id={id} value={currentValue} onChange={UpdateFieldValue}>
       {populateDropdown(id, data)}
     </select>
   );
