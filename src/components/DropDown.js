@@ -22,7 +22,7 @@ const DropDown = ({
 }) => {
   const UpdateFieldValue = event => {
     const updatedWorkouts = JSON.parse(JSON.stringify(workouts));
-    const set = parseInt(id[id.length - 1]) + 1;
+    const set = parseInt(id[id.length - 1]);
     updatedWorkouts[workoutId - 1].exercises[exerciseId].currentResult[set][name] = parseInt(
       event.target.value
     );

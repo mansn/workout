@@ -8,10 +8,10 @@ const Exercise = props => {
       <div className="exercise-input" key={`${props.title}-set-${i}`}>
         <label>
           <DropDown
-            name="repetitions"
+            name="reps"
             id={`${props.title}-reps-${i}`}
             data={props.reps}
-            currentValue={props.currentResult[i + 1].reps}
+            currentValue={props.currentResult[i].reps}
             workouts={props.workouts}
             exerciseId={props.exerciseId}
             workoutId={props.workoutId}
@@ -23,7 +23,7 @@ const Exercise = props => {
             name="weight"
             id={`${props.title}-weight-${i}`}
             data={props.weights}
-            currentValue={props.currentResult[i + 1].weight}
+            currentValue={props.currentResult[i].weight}
             workouts={props.workouts}
             exerciseId={props.exerciseId}
             workoutId={props.workoutId}
