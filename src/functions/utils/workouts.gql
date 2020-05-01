@@ -1,0 +1,30 @@
+type Workout {
+  title: String!
+  exercises: [Exercise]!
+}
+
+type Exercise {
+  title: String!
+  weights: [Int]!
+  reps: [Int]!
+  sets: Int!
+  recommendedReps: recommendedReps!
+  currentResult: [Result]!
+  Workout: Workout
+}
+
+type recommendedReps {
+  min: Int!
+  max: Int!
+}
+
+type Result {
+  exercise: Exercise!
+  weight: Int!
+  reps: Int!
+}
+
+type Query {
+  allExercises: [Exercise]!
+  allWorkouts: [Workout]!
+}
