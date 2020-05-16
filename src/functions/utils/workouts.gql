@@ -1,6 +1,6 @@
 type Workout {
   title: String!
-  exercises: [Exercise]!
+  exercises: [Exercise!] @relation
 }
 
 type Exercise {
