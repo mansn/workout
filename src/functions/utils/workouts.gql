@@ -9,7 +9,7 @@ type Exercise {
   reps: [Int]!
   sets: Int!
   recommendedReps: recommendedReps!
-  currentResult: [Result]!
+  currentResult: [Result]! @relation
   Workout: Workout
 }
 
