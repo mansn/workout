@@ -1,12 +1,12 @@
 type Workout {
   title: String!
-  exercises: [Exercise!] @relation
+  exercises: [Exercise!]! @relation
 }
 
 type Exercise {
   title: String!
-  weights: [Int]!
-  reps: [Int]!
+  weights: [Int!]!
+  reps: [Int!]!
   sets: Int!
   recommendedReps: recommendedReps!
   currentResult: [Result]! @relation
@@ -25,6 +25,6 @@ type Result {
 }
 
 type Query {
-  allExercises: [Exercise]!
-  allWorkouts: [Workout]!
+  allExercises: [Exercise!]!
+  allWorkouts: [Workout!]!
 }
