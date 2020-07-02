@@ -1,4 +1,4 @@
-const sendQuery = require("./utils/send-query");
+const sendQuery = require('./utils/send-query');
 
 const GET_ALL_WORKOUTS = `
   query {
