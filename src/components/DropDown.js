@@ -20,7 +20,7 @@ const DropDown = ({
   exerciseId,
   workoutId,
   workouts,
-  setWorkouts,
+  setWorkouts
 }) => {
   const UpdateFieldValue = event => {
     const updatedWorkouts = JSON.parse(JSON.stringify(workouts));

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import Exercise from "./Exercise";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import Exercise from './Exercise';
+import axios from 'axios';
 // import { workoutList } from "../resources/workoutsFull.json";
 
 const Workout = () => {
   const [workouts, setWorkouts] = useState([]);
-  const [status, setStatus] = useState("loading");
+  const [status, setStatus] = useState('loading');
 
   useEffect(() => {
     let canceled = false;
     // if (workouts.length === 0) {
     //   setWorkouts(workoutList);
     // }
-    axios("/api/get-all-workouts").then(result => {
+    axios('/api/get-all-workouts').then(result => {
       if (canceled === true) return;
 
       if (result.status !== 200) {
@@ -20,7 +20,7 @@ const Workout = () => {
       }
 
       setWorkouts(result.data.workouts);
-      setStatus("loaded");
+      setStatus('loaded');
     });
 
     return () => {
@@ -30,7 +30,7 @@ const Workout = () => {
 
   return (
     <div className="workout-program">
-      {status === "loading" ? (
+      {status === 'loading' ? (
         <p>Loading...</p>
       ) : (
         workouts.map(({ title, exercises }, workoutId) => {
