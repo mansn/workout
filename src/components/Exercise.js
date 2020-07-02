@@ -11,7 +11,7 @@ const Exercise = props => {
             name="reps"
             id={`${props.title}-reps-${i}`}
             data={props.reps}
-            currentValue={props.currentResult[i].reps}
+            currentValue={props.currentResult.data[i].reps}
             workouts={props.workouts}
             exerciseId={props.exerciseId}
             workoutId={props.workoutId}
@@ -23,7 +23,7 @@ const Exercise = props => {
             name="weight"
             id={`${props.title}-weight-${i}`}
             data={props.weights}
-            currentValue={props.currentResult[i].weight}
+            currentValue={props.currentResult.data[i].weight}
             workouts={props.workouts}
             exerciseId={props.exerciseId}
             workoutId={props.workoutId}

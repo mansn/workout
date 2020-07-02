@@ -12,6 +12,10 @@ const GET_ALL_WORKOUTS = `
             weights
             sets
             reps
+            recommendedReps {
+              min
+              max
+            }
             currentResult {
               data {
                 _id
@@ -32,12 +36,12 @@ exports.handler = async () => {
   if (errors) {
     return {
       statusCode: 500,
-      body: JSON.stringify(errors),
+      body: JSON.stringify(errors)
     };
   }
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ workouts: data.allWorkouts.data }),
+    body: JSON.stringify({ workouts: data.allWorkouts.data })
   };
 };
