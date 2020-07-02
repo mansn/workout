@@ -1,3 +1,8 @@
+[dev]
+framework = "#custom"
+command = "npm start"
+targetPort = 3001
+
 [build]
 command = "npm run build && mkdir build && cp public/* build && cp -r dist build/dist"
 publish = "build"
