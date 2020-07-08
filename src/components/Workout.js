@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Exercise from './Exercise'
-import CreateExercise from './createExercise'
 import axios from 'axios'
-// import { workoutList } from "../resources/workoutsFull.json";
 
 const Workout = () => {
   const [workouts, setWorkouts] = useState([])
@@ -45,7 +43,6 @@ const Workout = () => {
 
   return (
     <>
-      <CreateExercise />
       <div className="workout-program">
         {status === 'loading' ? (
           <p>Loading...</p>
