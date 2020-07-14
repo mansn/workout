@@ -43,8 +43,34 @@ header {
   font-size: 1.1rem;
   background-color: black;
   color: white;
-  padding: 1em 1.5em;
-  margin-bottom: 2em;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  padding-bottom: 1rem;
+}
+
+header > nav {
+  display: grid;
+  place-items: start;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+header > nav > a {
+  padding: 1rem 1rem;
+  border: 1px solid gray;
+}
+
+header > nav > a:hover {
+  padding: 1rem 1rem;
+  background-color: gray;
+  color: white;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
 }
 
 ul.exercises {
