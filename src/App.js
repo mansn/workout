@@ -10,18 +10,21 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Link to="/">
-            <h1> Hello, Workout! 🏋️‍♂️</h1>
-          </Link>
-          <nav>
-            <Link to="/create-exercise">Create Exercise</Link>
-          </nav>
+          <div className="inner-header">
+            <Link to="/">
+              <h1> Hello, Workout! 🏋️‍♂️</h1>
+            </Link>
+            <nav>
+              <Link to="create-exercise">Add Workout/Exercise</Link>
+            </nav>
+          </div>
         </header>
         <div className="container">
           <Router>
             <Workout path="/" />
-            <CreateExercise path="/create-exercise" />
+            <CreateExercise path="create-exercise" />
           </Router>
+          <div className="mobile-add-workout-exercise"></div>
         </div>
       </div>
     )

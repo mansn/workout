@@ -10,6 +10,12 @@
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .App {
   font-size: 16px;
   margin: 1rem;
@@ -47,23 +53,37 @@ header {
   margin-bottom: 2rem;
 }
 
-h1 {
-  padding-bottom: 1rem;
+.inner-header {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  place-items: start;
+  max-width: 48rem;
 }
 
-header > nav {
+.loading-container {
+  display: flex;
+}
+
+.loading-animate {
+  line-height: 1rem;
+  margin: 0 0.5rem;
+  font-size: 1.8rem;
+  animation: 1s linear infinite spin;
+}
+
+nav {
   display: grid;
   place-items: start;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
-header > nav > a {
-  padding: 1rem 1rem;
+nav > a {
+  padding: 0.75rem 1rem;
   border: 1px solid gray;
 }
 
-header > nav > a:hover {
-  padding: 1rem 1rem;
+nav > a:hover {
   background-color: gray;
   color: white;
 }
@@ -151,13 +171,36 @@ button.save {
 
   .exercise-meta {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
   }
 }
 
 /* ----- MOBILE -----  */
 
 @media screen and (max-width: 1023px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .mobile-add-workout-exercise {
+    border: 1px solid red;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin: 1rem 2rem;
+    background-color: red;
+  }
+
+  .inner-header {
+    display: block;
+  }
+
   .workout-program {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -170,6 +213,10 @@ button.save {
 
   .exercise-meta {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  ul.exercises {
+    grid-template-columns: 1fr;
   }
 }

@@ -45,7 +45,11 @@ const Workout = () => {
     <>
       <div className="workout-program">
         {status === 'loading' ? (
-          <p>Loading...</p>
+          <div className="loading-container">
+            <div className="loading-animate">🏋️‍♂️</div>
+            <p>Loading...</p>
+            <div className="loading-animate">🏋️‍♂️</div>
+          </div>
         ) : (
           workouts.map(({ title, exercises }, workoutId) => {
             return (
