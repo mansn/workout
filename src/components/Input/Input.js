@@ -37,12 +37,24 @@ const Input = ({ name, id, data, currentValue, exerciseId, workoutId, workouts, 
     <>
       {modified ? (
         <div className={styles.container}>
-          <input type="text" value={currentValue} onChange={UpdateFieldValue} />
+          <input
+            inputmode="numeric"
+            pattern="[0-9]*"
+            type="text"
+            value={currentValue}
+            onChange={UpdateFieldValue}
+          />
           <button onClick={postSave}>Y</button>
           <button onClick={undo}>N</button>
         </div>
       ) : (
-        <input type="text" value={currentValue} onChange={UpdateFieldValue} />
+        <input
+          inputmode="numeric"
+          pattern="[0-9]*"
+          type="text"
+          value={currentValue}
+          onChange={UpdateFieldValue}
+        />
       )}
     </>
   )
