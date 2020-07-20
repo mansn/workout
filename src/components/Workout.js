@@ -5,6 +5,7 @@ import axios from 'axios'
 const Workout = () => {
   const [workouts, setWorkouts] = useState([])
   const [status, setStatus] = useState('loading')
+
   const saveWorkout = () => {
     let canceled = false
     axios('/api/get-all-workouts').then(result => {
@@ -43,6 +44,7 @@ const Workout = () => {
 
   return (
     <>
+      {console.log('workouts', workouts)}
       <div className="workout-program">
         {status === 'loading' ? (
           <div className="loading-container">
@@ -58,10 +60,7 @@ const Workout = () => {
                   <legend>{title}</legend>
                   <ul className="exercises">
                     {exercises.data.map(
-                      (
-                        { title, weights, reps, sets, recommendedReps, currentResult },
-                        exerciseId
-                      ) => {
+                      ({ title, weights, reps, sets, recommendedReps, currentResult, _id }) => {
                         return (
                           <Exercise
                             title={title}
@@ -70,9 +69,9 @@ const Workout = () => {
                             recommendedReps={recommendedReps}
                             currentResult={currentResult}
                             sets={sets}
-                            key={exerciseId}
+                            key={_id}
                             workouts={workouts}
-                            exerciseId={parseInt(exerciseId)}
+                            exerciseId={_id}
                             workoutId={parseInt(workoutId + 1)}
                             setWorkouts={setWorkouts}
                           />

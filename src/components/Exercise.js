@@ -1,33 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import Input from './Input/Input'
 
-const Exercise = props => {
+const Exercise = ({
+  title,
+  sets,
+  reps,
+  currentResult,
+  recommendedReps,
+  workouts,
+  exerciseId,
+  workoutId,
+  setWorkouts
+}) => {
+  const [modified, setModified] = useState(false)
+  const handleSave = event => {
+    event.preventDefault()
+
+    axios.post('/api/update-exercise', {
+      id: exerciseId,
+      title,
+      weights: [5, 10, 15],
+      reps,
+      sets,
+      currentResult: {
+        create: currentResult.data.map(result => {
+          delete result._id
+          return result
+        })
+      }
+    })
+  }
+
   const inputFields = []
-  for (let i = 0; i < props.sets; i++) {
+  for (let i = 0; i < sets; i++) {
     inputFields.push(
-      <div className="exercise-input" key={`${props.title}-set-${i}`}>
+      <div className="exercise-input" key={`${title}-set-${i}`}>
         <label>
           <Input
             name="reps"
-            id={`${props.title}-reps-${i}`}
-            data={props.reps}
-            currentValue={props.currentResult.data[i].reps}
-            workouts={props.workouts}
-            exerciseId={props.exerciseId}
-            workoutId={props.workoutId}
-            setWorkouts={props.setWorkouts}
+            id={`${title}-reps-${i}`}
+            data={reps}
+            currentValue={currentResult.data[i].reps}
+            workouts={workouts}
+            exerciseId={exerciseId}
+            workoutId={workoutId}
+            setWorkouts={setWorkouts}
+            setModified={setModified}
           />
         </label>
         <label>
           <Input
             name="weight"
-            id={`${props.title}-weight-${i}`}
-            data={props.weights}
-            currentValue={props.currentResult.data[i].weight}
-            workouts={props.workouts}
-            exerciseId={props.exerciseId}
-            workoutId={props.workoutId}
-            setWorkouts={props.setWorkouts}
+            id={`${title}-weight-${i}`}
+            currentValue={currentResult.data[i].weight}
+            workouts={workouts}
+            exerciseId={exerciseId}
+            workoutId={workoutId}
+            setWorkouts={setWorkouts}
+            setModified={setModified}
           />
         </label>
         <input placeholder="Comment..."></input>
@@ -35,13 +66,20 @@ const Exercise = props => {
     )
   }
   return (
-    <li className="exercise">
-      <div className="exercise-meta">
-        <h3>{`${props.title}`}</h3>
-        <h3>{`(${props.sets}x ${props.recommendedReps.min}-${props.recommendedReps.max})`}</h3>
-      </div>
-      {inputFields}
-    </li>
+    <>
+      <li className="exercise">
+        <div className="exercise-meta">
+          <h3>{`${title}`}</h3>
+          <h3>{`(${sets}x ${recommendedReps.min}-${recommendedReps.max})`}</h3>
+        </div>
+        {inputFields}
+        {modified && (
+          <button className="save" onClick={handleSave}>
+            Save
+          </button>
+        )}
+      </li>
+    </>
   )
 }
 
