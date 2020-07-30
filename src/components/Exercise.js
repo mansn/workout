@@ -17,23 +17,23 @@ const Exercise = ({
   const handleSave = event => {
     event.preventDefault()
 
-    axios.post('/api/update-exercise', {
-      id: exerciseId,
-      title,
-      weights: [5, 10, 15],
-      reps,
-      sets,
-      currentResult: {
-        create: currentResult.data.map(result => {
-          delete result._id
-          return result
-        })
-      }
+    currentResult.data.map(({ _id, weight, reps, setNo }) => {
+      axios.post('/api/update-result', {
+        id: _id,
+        exerciseId: exerciseId,
+        weight,
+        reps,
+        setNo
+      })
     })
   }
 
   const inputFields = []
-  for (let i = 0; i < sets; i++) {
+  const sortedResults = [].concat(currentResult.data).sort((resultA, resultB) => {
+    return resultA.setNo - resultB.setNo
+  })
+
+  for (let i = 0; i < currentResult.data.length; i++) {
     inputFields.push(
       <div className="exercise-input" key={`${title}-set-${i}`}>
         <label>
@@ -41,7 +41,7 @@ const Exercise = ({
             name="reps"
             id={`${title}-reps-${i}`}
             data={reps}
-            currentValue={currentResult.data[i].reps}
+            currentValue={sortedResults[i].reps}
             workouts={workouts}
             exerciseId={exerciseId}
             workoutId={workoutId}
@@ -53,7 +53,7 @@ const Exercise = ({
           <Input
             name="weight"
             id={`${title}-weight-${i}`}
-            currentValue={currentResult.data[i].weight}
+            currentValue={sortedResults[i].weight}
             workouts={workouts}
             exerciseId={exerciseId}
             workoutId={workoutId}

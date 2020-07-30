@@ -19,6 +19,7 @@ const GET_ALL_WORKOUTS = `
             }
             currentResult {
               data {
+                setNo
                 _id
                 weight
                 reps

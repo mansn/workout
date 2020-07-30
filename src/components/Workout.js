@@ -44,7 +44,6 @@ const Workout = () => {
 
   return (
     <>
-      {console.log('workouts', workouts)}
       <div className="workout-program">
         {status === 'loading' ? (
           <div className="loading-container">

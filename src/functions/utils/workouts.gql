@@ -22,6 +22,7 @@ type Result {
   exercise: Exercise!
   weight: Int!
   reps: Int!
+  setNo: Int!
 }
 
 type Query {
