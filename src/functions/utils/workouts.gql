@@ -18,11 +18,21 @@ type recommendedReps {
   max: Int!
 }
 
+input ResultsUpdateInput {
+  id: ID!
+  weight: Int!
+  reps: Int!
+}
+
 type Result {
   exercise: Exercise!
   weight: Int!
   reps: Int!
   setNo: Int!
+}
+
+type Mutation {
+  updateResults(results: [ResultsUpdateInput]): [ID]! @resolver
 }
 
 type Query {

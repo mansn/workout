@@ -17,14 +17,22 @@ const Exercise = ({
   const handleSave = event => {
     event.preventDefault()
 
-    currentResult.data.map(({ _id, weight, reps, setNo }) => {
-      axios.post('/api/update-result', {
-        id: _id,
-        exerciseId: exerciseId,
-        weight,
-        reps,
-        setNo
-      })
+    currentResult.data.map(({ _id, weight, reps }) => {
+      axios
+        .post('/api/update-results', {
+          id: _id,
+          weight,
+          reps
+        })
+        .then(result => {
+          if (result.status !== 200) {
+            console.error('Error saving result!')
+            console.error(result)
+            return
+          }
+
+          setModified(false)
+        })
     })
   }
 
