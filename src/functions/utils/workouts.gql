@@ -32,7 +32,7 @@ type Result {
 }
 
 type Mutation {
-  updateResults(results: [ResultsUpdateInput]): [ID]! @resolver
+  updateResults(data: [ResultsUpdateInput]): [ID]! @resolver
 }
 
 type Query {

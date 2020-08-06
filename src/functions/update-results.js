@@ -1,27 +1,18 @@
 const sendQuery = require('./utils/send-query')
 
 const UPDATE_RESULTS = `
-  mutation($id: ID!, $weight: Int!, $reps: Int!){
+  mutation($results: [ResultsUpdateInput]){
     updateResults(
-      data: {
-        id: $id
-        weight: $weight
-        reps: $reps
-      }
+      data: $results
     )
-    {
-      _id
-    }
   }
 `
 
 exports.handler = async event => {
-  const { id, weight, reps } = JSON.parse(event.body)
+  const results = JSON.parse(event.body)
 
   const { data, errors } = await sendQuery(UPDATE_RESULTS, {
-    id,
-    weight,
-    reps
+    results
   })
 
   if (errors) {
