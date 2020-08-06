@@ -1,13 +1,13 @@
-import React from 'react';
-import DropDown from './DropDown';
+import React from 'react'
+import Input from './Input/Input'
 
 const Exercise = props => {
-  const inputFields = [];
+  const inputFields = []
   for (let i = 0; i < props.sets; i++) {
     inputFields.push(
       <div className="exercise-input" key={`${props.title}-set-${i}`}>
         <label>
-          <DropDown
+          <Input
             name="reps"
             id={`${props.title}-reps-${i}`}
             data={props.reps}
@@ -19,7 +19,7 @@ const Exercise = props => {
           />
         </label>
         <label>
-          <DropDown
+          <Input
             name="weight"
             id={`${props.title}-weight-${i}`}
             data={props.weights}
@@ -32,7 +32,7 @@ const Exercise = props => {
         </label>
         <input placeholder="Comment..."></input>
       </div>
-    );
+    )
   }
   return (
     <li className="exercise">
@@ -42,7 +42,7 @@ const Exercise = props => {
       </div>
       {inputFields}
     </li>
-  );
-};
+  )
+}
 
-export default Exercise;
+export default Exercise

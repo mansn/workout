@@ -1,5 +1,5 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   entry: './src/index.js',
@@ -17,7 +17,22 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true
+            }
+          }
+        ],
+        include: /\.module\.css$/
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/
       }
     ]
   },
@@ -31,8 +46,9 @@ module.exports = {
     contentBase: path.join(__dirname, 'public/'),
     port: 3001,
     publicPath: 'http://localhost:3001/dist/',
+    historyApiFallback: true,
     hotOnly: true,
     host: '0.0.0.0'
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
-};
+}
