@@ -78,7 +78,6 @@ const Workout = () => {
                       }
                     )}
                   </ul>
-                  <button className="save">Save</button>
                 </fieldset>
               </div>
             )
