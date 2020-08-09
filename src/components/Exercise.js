@@ -24,24 +24,29 @@ const Exercise = ({
       return { id: _id, weight, reps }
     })
 
-    setTimeout(() => {
-      setSaveStatus('saved')
-    }, 1000)
+    axios
+      .post('/api/update-results', result)
+      .then(result => {
+        if (result.status !== 200) {
+          throw Error(result)
+        }
 
-    setTimeout(() => {
-      setSaveStatus('save')
-    }, 3000)
-
-    // axios.post('/api/update-results', result).then(result => {
-    //   if (result.status !== 200) {
-    //     console.error('Error saving result!')
-    //     console.error(result)
-    //     return
-    //   }
-
-    //   setModified(false)
-    //   setIsSaving(false)
-    // })
+        setSaveStatus('saved')
+        return new Promise(resolve =>
+          setTimeout(() => {
+            setSaveStatus('save')
+            resolve()
+          }, 1000)
+        )
+      })
+      .then(() => setModified(false))
+      .catch(err => {
+        console.error('Error saving result:', err)
+        setSaveStatus('error')
+        setTimeout(() => {
+          setSaveStatus('save')
+        }, 1000)
+      })
   }
 
   const inputFields = []
