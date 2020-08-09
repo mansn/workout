@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Input from './Input/Input'
+import SaveButton from './SaveButton'
 
 const Exercise = ({
   title,
@@ -14,22 +15,38 @@ const Exercise = ({
   setWorkouts
 }) => {
   const [modified, setModified] = useState(false)
+  const [saveStatus, setSaveStatus] = useState('save')
   const handleSave = event => {
+    setSaveStatus('saving')
     event.preventDefault()
 
     const result = currentResult.data.map(({ _id, weight, reps }) => {
       return { id: _id, weight, reps }
     })
 
-    axios.post('/api/update-results', result).then(result => {
-      if (result.status !== 200) {
-        console.error('Error saving result!')
-        console.error(result)
-        return
-      }
+    axios
+      .post('/api/update-results', result)
+      .then(result => {
+        if (result.status !== 200) {
+          throw Error(result)
+        }
 
-      setModified(false)
-    })
+        setSaveStatus('saved')
+        return new Promise(resolve =>
+          setTimeout(() => {
+            setSaveStatus('save')
+            resolve()
+          }, 1000)
+        )
+      })
+      .then(() => setModified(false))
+      .catch(err => {
+        console.error('Error saving result:', err)
+        setSaveStatus('error')
+        setTimeout(() => {
+          setSaveStatus('save')
+        }, 1000)
+      })
   }
 
   const inputFields = []
@@ -77,11 +94,7 @@ const Exercise = ({
           <h3>{`(${sets}x ${recommendedReps.min}-${recommendedReps.max})`}</h3>
         </div>
         {inputFields}
-        {modified && (
-          <button className="save" onClick={handleSave}>
-            Save
-          </button>
-        )}
+        {modified && <SaveButton handleSave={handleSave} saveStatus={saveStatus} />}
       </li>
     </>
   )

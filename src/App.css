@@ -4,15 +4,32 @@
   padding: 0;
 }
 
-@keyframes crazyRotate {
-  to {
-    transform: rotateZ(360deg) rotateY(360deg) rotateX(360deg);
-  }
-}
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
 
@@ -26,23 +43,6 @@
 
 html {
   background-color: #212529;
-}
-
-select {
-  font-size: 1rem;
-  border: 1px solid #aaa;
-  padding: 0.2rem 0.5rem;
-  width: 100%;
-  margin-bottom: 0.25rem;
-  background-color: white;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-    linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
-  background-repeat: no-repeat, repeat;
-  background-position: right 0.7em top 50%, 0 0;
-  background-size: 0.65em auto, 100%;
 }
 
 header {
@@ -101,8 +101,10 @@ ul.exercises {
 }
 
 li.exercise {
+  display: grid;
+  grid-auto-rows: min-content;
   list-style: none;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
 }
 
 .exercise-input {
@@ -145,14 +147,36 @@ legend {
   margin: 1em 0;
 }
 
-button.save {
+button.save-btn {
   font-size: 1rem;
+  min-height: 3rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  margin-bottom: 1rem;
+  text-align: center;
   width: 100%;
+  margin: auto;
   cursor: pointer;
   background-color: rgb(221, 221, 221);
+}
+
+button.saved {
+  background: #2ecc71;
+}
+
+button.error {
+  animation: shake 1s ease-out both;
+}
+
+.spinner {
+  display: block;
+  margin: auto;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 1rem;
+  border: 4px solid #fff;
+  border-top-color: rgba(0, 0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+  animation: 1s linear infinite spin;
 }
 
 /* ----- DESKTOP -----  */
