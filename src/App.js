@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Router, Link } from '@reach/router'
+import LoginButton from './components/LoginButton'
+import LogoutButton from './components/LogoutButton'
 import { hot } from 'react-hot-loader'
 import './App.css'
 import Workout from './components/Workout'
@@ -13,6 +15,8 @@ class App extends Component {
             <Link to="/">
               <h1> Hello, Workout! 🏋️‍♂️</h1>
             </Link>
+            <LoginButton />
+            <LogoutButton />
           </div>
         </header>
         <div className="container">
