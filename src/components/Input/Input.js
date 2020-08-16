@@ -19,7 +19,7 @@ const Input = ({
       exercise => exercise._id === exerciseId
     )
     if (exercise) {
-      exercise.currentResult.data[set][name] = parseInt(event.target.value) || 0
+      exercise.currentResult.data[set][name] = parseInt(event.target.value) || ''
       setModified(true)
       setWorkouts(updatedWorkouts)
     }
