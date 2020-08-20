@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles.module.css'
+import styles from './Input.module.css'
 
 const Input = ({
   name,
@@ -14,7 +14,7 @@ const Input = ({
   const updatedWorkouts = JSON.parse(JSON.stringify(workouts))
   const set = parseInt(id[id.length - 1])
 
-  const UpdateFieldValue = event => {
+  const updateFieldValue = event => {
     const exercise = updatedWorkouts[workoutId - 1].exercises.data.find(
       exercise => exercise._id === exerciseId
     )
@@ -25,14 +25,17 @@ const Input = ({
     }
   }
 
+  // TODO: Add input validation which displays error text which says that you need to pass a numeric value
   return (
-    <input
-      inputMode="numeric"
-      pattern="[0-9]*"
-      type="text"
-      value={currentValue}
-      onChange={UpdateFieldValue}
-    />
+    <>
+      <input
+        inputMode="numeric"
+        pattern="[0-9]*"
+        type="text"
+        value={currentValue}
+        onChange={updateFieldValue}
+      />
+    </>
   )
 }
 
