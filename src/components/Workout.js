@@ -4,38 +4,22 @@ import axios from 'axios'
 
 const Workout = () => {
   const [workouts, setWorkouts] = useState([])
-  const [status, setStatus] = useState('loading')
-
-  const saveWorkout = () => {
-    let canceled = false
-    axios('/api/get-all-workouts').then(result => {
-      if (canceled === true) return
-
-      if (result.status !== 200) {
-        return
-      }
-
-      setWorkouts(result.data.workouts)
-      setStatus('loaded')
-    })
-
-    return () => {
-      canceled = true
-    }
-  }
+  const [status, setStatus] = useState('LOADING')
 
   useEffect(() => {
     let canceled = false
-    axios('/api/get-all-workouts').then(result => {
-      if (canceled === true) return
+    if (status === 'LOADING') {
+      axios('/api/get-all-workouts').then(result => {
+        if (canceled === true) return
 
-      if (result.status !== 200) {
-        return
-      }
+        if (result.status !== 200) {
+          return
+        }
 
-      setWorkouts(result.data.workouts)
-      setStatus('loaded')
-    })
+        setWorkouts(result.data.workouts)
+        setStatus('LOADED')
+      })
+    }
 
     return () => {
       canceled = true
@@ -45,7 +29,7 @@ const Workout = () => {
   return (
     <>
       <div className="workout-program">
-        {status === 'loading' ? (
+        {status === 'LOADING' ? (
           <div className="loading-container">
             <div className="loading-animate">🏋️‍♂️</div>
             <p>Loading...</p>
