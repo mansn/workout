@@ -1,11 +1,10 @@
 import React from 'react'
 import { Router, Link } from '@reach/router'
-import LoginButton from './components/LoginButton/LoginButton'
-import LogoutButton from './components/LogoutButton'
 import { hot } from 'react-hot-loader'
 import './App.css'
 import Workout from './components/Workout'
 import { useAuth0 } from '@auth0/auth0-react'
+import Auth from './components/Auth/Auth'
 
 function App() {
   const { user, isAuthenticated } = useAuth0()
@@ -18,8 +17,7 @@ function App() {
             <h1>Hello, Workout! 🏋️‍♂️</h1>
           </Link>
           <div className="auth">
-            <LoginButton />
-            <LogoutButton />
+            <Auth />
           </div>
         </div>
       </header>
