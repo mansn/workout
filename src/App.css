@@ -49,16 +49,18 @@ header {
   font-size: 1.1rem;
   background-color: black;
   color: white;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.0rem;
   margin-bottom: 2rem;
 }
 
 .inner-header {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.3fr;
   place-items: start;
-  max-width: 48rem;
+}
+
+.inner-header .auth {
+  justify-self: end;
 }
 
 .loading-container {
@@ -219,10 +221,6 @@ button.error {
     padding: 1.5rem;
     margin: 1rem 2rem;
     background-color: red;
-  }
-
-  .inner-header {
-    display: block;
   }
 
   .workout-program {

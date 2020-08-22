@@ -9,10 +9,10 @@ const Exercise = ({
   reps,
   currentResult,
   recommendedReps,
-  workouts,
+  workoutData,
   exerciseId,
   workoutId,
-  setWorkouts
+  setWorkoutData
 }) => {
   const [modified, setModified] = useState(false)
   const [saveStatus, setSaveStatus] = useState('save')
@@ -63,10 +63,10 @@ const Exercise = ({
             id={`${title}-reps-${i}`}
             data={reps}
             currentValue={sortedResults[i].reps}
-            workouts={workouts}
+            workoutData={workoutData}
             exerciseId={exerciseId}
             workoutId={workoutId}
-            setWorkouts={setWorkouts}
+            setWorkoutData={setWorkoutData}
             setModified={setModified}
           />
         </label>
@@ -75,10 +75,10 @@ const Exercise = ({
             name="weight"
             id={`${title}-weight-${i}`}
             currentValue={sortedResults[i].weight}
-            workouts={workouts}
+            workoutData={workoutData}
             exerciseId={exerciseId}
             workoutId={workoutId}
-            setWorkouts={setWorkouts}
+            setWorkoutData={setWorkoutData}
             setModified={setModified}
           />
         </label>
