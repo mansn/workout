@@ -3,7 +3,7 @@ import Exercise from './Exercise'
 import axios from 'axios'
 
 const Workout = () => {
-  const [workouts, setWorkouts] = useState([])
+  const [workoutData, setWorkoutData] = useState([])
   const [status, setStatus] = useState('LOADING')
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Workout = () => {
           return
         }
 
-        setWorkouts(result.data.workouts)
+        setWorkoutData(result.data.workouts)
         setStatus('LOADED')
       })
     }
@@ -36,7 +36,7 @@ const Workout = () => {
             <div className="loading-animate">🏋️‍♂️</div>
           </div>
         ) : (
-          workouts.map(({ title, exercises }, workoutId) => {
+          workoutData.map(({ title, exercises }, workoutId) => {
             return (
               <div className="workout" key={workoutId}>
                 <fieldset>
@@ -53,10 +53,10 @@ const Workout = () => {
                             currentResult={currentResult}
                             sets={sets}
                             key={_id}
-                            workouts={workouts}
+                            workoutData={workoutData}
                             exerciseId={_id}
                             workoutId={parseInt(workoutId + 1)}
-                            setWorkouts={setWorkouts}
+                            setWorkoutData={setWorkoutData}
                           />
                         )
                       }

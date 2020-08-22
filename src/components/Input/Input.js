@@ -7,11 +7,11 @@ const Input = ({
   currentValue,
   exerciseId,
   workoutId,
-  workouts,
-  setWorkouts,
+  workoutData,
+  setWorkoutData,
   setModified
 }) => {
-  const updatedWorkouts = JSON.parse(JSON.stringify(workouts))
+  const updatedWorkouts = JSON.parse(JSON.stringify(workoutData))
   const set = parseInt(id[id.length - 1])
 
   const updateFieldValue = event => {
@@ -21,7 +21,7 @@ const Input = ({
     if (exercise) {
       exercise.currentResult.data[set][name] = parseInt(event.target.value) || ''
       setModified(true)
-      setWorkouts(updatedWorkouts)
+      setWorkoutData(updatedWorkouts)
     }
   }
 
