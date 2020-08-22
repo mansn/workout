@@ -49,7 +49,7 @@ header {
   font-size: 1.1rem;
   background-color: black;
   color: white;
-  padding: 1rem 1.0rem;
+  padding: 1rem 1rem;
   margin-bottom: 2rem;
 }
 
@@ -181,10 +181,20 @@ button.error {
   animation: 1s linear infinite spin;
 }
 
+.main {
+  display: grid;
+  grid-template-areas:
+    'disclaimer'
+    'workout-program';
+}
+
+/* ----- WORKOUT START ----- */
+
 /* ----- DESKTOP -----  */
 
 @media screen and (min-width: 1024px) {
   .workout-program {
+    grid-area: workout-program;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -212,27 +222,6 @@ button.error {
     display: none;
   }
 
-  .mobile-add-workout-exercise {
-    border: 1px solid red;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    border-radius: 2rem;
-    padding: 1.5rem;
-    margin: 1rem 2rem;
-    background-color: red;
-  }
-
-  .workout-program {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .workout {
-    display: grid;
-    margin-bottom: 2em;
-  }
-
   .exercise-meta {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -241,4 +230,6 @@ button.error {
   ul.exercises {
     grid-template-columns: 1fr;
   }
+
+  /* ----- WORKOUT END ----- */
 }

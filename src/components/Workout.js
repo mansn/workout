@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import Exercise from './Exercise'
 import axios from 'axios'
+import dummyData from '../mocks/workoutData.json'
 
-const Workout = () => {
+const Workout = ({ guestUser }) => {
   const [workoutData, setWorkoutData] = useState([])
   const [status, setStatus] = useState('LOADING')
 
   useEffect(() => {
     let canceled = false
     if (status === 'LOADING') {
-      axios('/api/get-all-workouts').then(result => {
-        if (canceled === true) return
-
-        if (result.status !== 200) {
-          return
-        }
-
-        setWorkoutData(result.data.workouts)
+      if (guestUser) {
+        setWorkoutData(dummyData.workouts)
         setStatus('LOADED')
-      })
+      } else {
+        axios('/api/get-all-workouts').then(result => {
+          if (canceled === true) return
+
+          if (result.status !== 200) {
+            return
+          }
+
+          setWorkoutData(result.data.workouts)
+          setStatus('LOADED')
+        })
+      }
     }
 
     return () => {

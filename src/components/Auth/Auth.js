@@ -6,7 +6,7 @@ import LogoutButton from '../LogoutButton/LogoutButton'
 const Auth = () => {
   const { isAuthenticated } = useAuth0()
 
-  return !isAuthenticated ? <LoginButton /> : <LogoutButton />
+  return <div className="auth">{!isAuthenticated ? <LoginButton /> : <LogoutButton />}</div>
 }
 
 export default Auth

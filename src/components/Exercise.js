@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import Input from './Input/Input'
 import SaveButton from './SaveButton'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const Exercise = ({
   title,
@@ -14,8 +15,15 @@ const Exercise = ({
   workoutId,
   setWorkoutData
 }) => {
+  // TODO: Temporary solution to use the isAuthenticated hook here
+  // should try and move decisions on this higher up the hierarchy
+  const { isAuthenticated } = useAuth0()
   const [modified, setModified] = useState(false)
   const [saveStatus, setSaveStatus] = useState('save')
+  const shouldRenderSaveBtn = () => {
+    if (!isAuthenticated && modified) return false
+    return false
+  }
   const handleSave = event => {
     setSaveStatus('saving')
     event.preventDefault()
@@ -94,7 +102,7 @@ const Exercise = ({
           <h3>{`(${sets}x ${recommendedReps.min}-${recommendedReps.max})`}</h3>
         </div>
         {inputFields}
-        {modified && <SaveButton handleSave={handleSave} saveStatus={saveStatus} />}
+        {shouldRenderSaveBtn() && <SaveButton handleSave={handleSave} saveStatus={saveStatus} />}
       </li>
     </>
   )

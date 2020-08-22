@@ -5,9 +5,24 @@ import './App.css'
 import Workout from './components/Workout'
 import { useAuth0 } from '@auth0/auth0-react'
 import Auth from './components/Auth/Auth'
+import DummyDataDisclaimer from './components/DummyDataDisclaimer/DummyDataDisclaimer'
 
 function App() {
-  const { user, isAuthenticated } = useAuth0()
+  const { isAuthenticated } = useAuth0()
+
+  const UnauthenticatedContent = () => (
+    <>
+      <DummyDataDisclaimer />
+      <Workout guestUser={true} />
+    </>
+  )
+  const AuthenticatedContent = () => <Workout />
+
+  const Content = () => (
+    <div className="main">
+      {isAuthenticated ? <AuthenticatedContent /> : <UnauthenticatedContent />}
+    </div>
+  )
 
   return (
     <div className="App">
@@ -16,18 +31,12 @@ function App() {
           <Link to="/">
             <h1>Hello, Workout! 🏋️‍♂️</h1>
           </Link>
-          <div className="auth">
-            <Auth />
-          </div>
+          <Auth />
         </div>
       </header>
-      {isAuthenticated && (
-        <div className="container">
-          <Router>
-            <Workout user={user} path="/" />
-          </Router>
-        </div>
-      )}
+      <Router>
+        <Content path="/" />
+      </Router>
     </div>
   )
 }
