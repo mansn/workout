@@ -8,11 +8,11 @@ So, this is yet another app for me to build for learning purposes.
 ## Install
 
 ```sh
-npm install
+yarn install
 ```
 
 ## Run
 
 ```sh
-npm start
+yarn start
 ```
