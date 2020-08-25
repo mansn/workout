@@ -29,7 +29,7 @@ function App() {
       <header>
         <div className="inner-header">
           <Link to="/">
-            <h1>Hello, Workout! 🏋️‍♂️</h1>
+            <h1>Workout! 🏋️‍♂️</h1>
           </Link>
           <Auth />
         </div>
