@@ -37,39 +37,6 @@ const Workout = ({ guestUser, isLoading }) => {
     }
   }, [status])
 
-  const WorkoutProgram = () => {
-    return workoutData.map(({ title, exercises }, workoutId) => {
-      return (
-        <div className="workout" key={workoutId}>
-          <fieldset>
-            <legend>{title}</legend>
-            <ul className="exercises">
-              {exercises.data.map(
-                ({ title, weights, reps, sets, recommendedReps, currentResult, _id }) => {
-                  return (
-                    <Exercise
-                      title={title}
-                      weights={weights}
-                      reps={reps}
-                      recommendedReps={recommendedReps}
-                      currentResult={currentResult}
-                      sets={sets}
-                      key={_id}
-                      workoutData={workoutData}
-                      exerciseId={_id}
-                      workoutId={parseInt(workoutId + 1)}
-                      setWorkoutData={setWorkoutData}
-                    />
-                  )
-                }
-              )}
-            </ul>
-          </fieldset>
-        </div>
-      )
-    })
-  }
-
   return (
     <>
       {status === 'LOADING' ? (
@@ -82,7 +49,36 @@ const Workout = ({ guestUser, isLoading }) => {
         <>
           {guestUser && <DummyDataDisclaimer />}
           <div className="workout-program">
-            <WorkoutProgram />
+            {workoutData.map(({ title, exercises }, workoutId) => {
+              return (
+                <div className="workout" key={workoutId}>
+                  <fieldset>
+                    <legend>{title}</legend>
+                    <ul className="exercises">
+                      {exercises.data.map(
+                        ({ title, weights, reps, sets, recommendedReps, currentResult, _id }) => {
+                          return (
+                            <Exercise
+                              title={title}
+                              weights={weights}
+                              reps={reps}
+                              recommendedReps={recommendedReps}
+                              currentResult={currentResult}
+                              sets={sets}
+                              key={_id}
+                              workoutData={workoutData}
+                              exerciseId={_id}
+                              workoutId={parseInt(workoutId + 1)}
+                              setWorkoutData={setWorkoutData}
+                            />
+                          )
+                        }
+                      )}
+                    </ul>
+                  </fieldset>
+                </div>
+              )
+            })}
           </div>
         </>
       )}
