@@ -5,18 +5,16 @@ import './App.css'
 import Workout from './components/Workout'
 import { useAuth0 } from '@auth0/auth0-react'
 import Auth from './components/Auth/Auth'
-import DummyDataDisclaimer from './components/DummyDataDisclaimer/DummyDataDisclaimer'
 
 function App() {
-  const { isAuthenticated } = useAuth0()
+  const { isAuthenticated, isLoading } = useAuth0()
 
   const UnauthenticatedContent = () => (
     <>
-      <DummyDataDisclaimer />
-      <Workout guestUser={true} />
+      <Workout isLoading={isLoading} guestUser={true} />
     </>
   )
-  const AuthenticatedContent = () => <Workout />
+  const AuthenticatedContent = () => <Workout isLoading={isLoading} />
 
   const Content = () => (
     <div className="main">

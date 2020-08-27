@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react'
 import Exercise from './Exercise'
 import axios from 'axios'
 import dummyData from '../mocks/workoutData.json'
+import DummyDataDisclaimer from '../components/DummyDataDisclaimer/DummyDataDisclaimer'
 
-const Workout = ({ guestUser }) => {
+const Workout = ({ guestUser, isLoading }) => {
   const [workoutData, setWorkoutData] = useState([])
   const [status, setStatus] = useState('LOADING')
 
   useEffect(() => {
     let canceled = false
+    if (isLoading) {
+      return
+    }
+
     if (status === 'LOADING') {
       if (guestUser) {
         setWorkoutData(dummyData.workouts)
@@ -34,46 +39,49 @@ const Workout = ({ guestUser }) => {
 
   return (
     <>
-      <div className="workout-program">
-        {status === 'LOADING' ? (
-          <div className="loading-container">
-            <div className="loading-animate">🏋️‍♂️</div>
-            <p>Loading...</p>
-            <div className="loading-animate">🏋️‍♂️</div>
+      {status === 'LOADING' ? (
+        <div className="loading-container">
+          <div className="loading-animate">🏋️‍♂️</div>
+          <p>Loading...</p>
+          <div className="loading-animate">🏋️‍♂️</div>
+        </div>
+      ) : (
+        <>
+          {guestUser && <DummyDataDisclaimer />}
+          <div className="workout-program">
+            {workoutData.map(({ title, exercises }, workoutId) => {
+              return (
+                <div className="workout" key={workoutId}>
+                  <fieldset>
+                    <legend>{title}</legend>
+                    <ul className="exercises">
+                      {exercises.data.map(
+                        ({ title, weights, reps, sets, recommendedReps, currentResult, _id }) => {
+                          return (
+                            <Exercise
+                              title={title}
+                              weights={weights}
+                              reps={reps}
+                              recommendedReps={recommendedReps}
+                              currentResult={currentResult}
+                              sets={sets}
+                              key={_id}
+                              workoutData={workoutData}
+                              exerciseId={_id}
+                              workoutId={parseInt(workoutId + 1)}
+                              setWorkoutData={setWorkoutData}
+                            />
+                          )
+                        }
+                      )}
+                    </ul>
+                  </fieldset>
+                </div>
+              )
+            })}
           </div>
-        ) : (
-          workoutData.map(({ title, exercises }, workoutId) => {
-            return (
-              <div className="workout" key={workoutId}>
-                <fieldset>
-                  <legend>{title}</legend>
-                  <ul className="exercises">
-                    {exercises.data.map(
-                      ({ title, weights, reps, sets, recommendedReps, currentResult, _id }) => {
-                        return (
-                          <Exercise
-                            title={title}
-                            weights={weights}
-                            reps={reps}
-                            recommendedReps={recommendedReps}
-                            currentResult={currentResult}
-                            sets={sets}
-                            key={_id}
-                            workoutData={workoutData}
-                            exerciseId={_id}
-                            workoutId={parseInt(workoutId + 1)}
-                            setWorkoutData={setWorkoutData}
-                          />
-                        )
-                      }
-                    )}
-                  </ul>
-                </fieldset>
-              </div>
-            )
-          })
-        )}
-      </div>
+        </>
+      )}
     </>
   )
 }
