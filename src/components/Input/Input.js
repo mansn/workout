@@ -5,6 +5,7 @@ const Input = ({
   name,
   id,
   currentValue,
+  unit = '',
   exerciseId,
   workoutId,
   workoutData,
@@ -27,15 +28,21 @@ const Input = ({
 
   // TODO: Add input validation which displays error text which says that you need to pass a numeric value
   return (
-    <>
-      <input
-        inputMode="numeric"
-        pattern="[0-9]*"
-        type="text"
-        value={currentValue}
-        onChange={updateFieldValue}
-      />
-    </>
+    <div style={{ gridArea: `${name}` }}>
+      <label htmlFor={id}>
+        <input
+          className={styles.input}
+          name={id}
+          id={id}
+          inputMode="numeric"
+          pattern="[0-9]*"
+          type="text"
+          value={`${currentValue}`}
+          onChange={updateFieldValue}
+        />
+      </label>
+      <span style={{ marginLeft: -2.2 + 'rem', color: 'black' }}>{unit}</span>
+    </div>
   )
 }
 

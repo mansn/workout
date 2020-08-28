@@ -57,31 +57,29 @@ const Exercise = ({
   for (let i = 0; i < currentResult.data.length; i++) {
     inputFields.push(
       <div className="exercise-input" key={`${title}-set-${i}`}>
-        <label>
-          <Input
-            name="reps"
-            id={`${title}-reps-${i}`}
-            data={reps}
-            currentValue={sortedResults[i].reps}
-            workoutData={workoutData}
-            exerciseId={exerciseId}
-            workoutId={workoutId}
-            setWorkoutData={setWorkoutData}
-            setModified={setModified}
-          />
-        </label>
-        <label>
-          <Input
-            name="weight"
-            id={`${title}-weight-${i}`}
-            currentValue={sortedResults[i].weight}
-            workoutData={workoutData}
-            exerciseId={exerciseId}
-            workoutId={workoutId}
-            setWorkoutData={setWorkoutData}
-            setModified={setModified}
-          />
-        </label>
+        <Input
+          name="reps"
+          id={`${title}-reps-${i}`}
+          data={reps}
+          currentValue={sortedResults[i].reps}
+          unit="reps"
+          workoutData={workoutData}
+          exerciseId={exerciseId}
+          workoutId={workoutId}
+          setWorkoutData={setWorkoutData}
+          setModified={setModified}
+        />
+        <Input
+          name="weight"
+          id={`${title}-weight-${i}`}
+          currentValue={sortedResults[i].weight}
+          unit="kg"
+          workoutData={workoutData}
+          exerciseId={exerciseId}
+          workoutId={workoutId}
+          setWorkoutData={setWorkoutData}
+          setModified={setModified}
+        />
         <input placeholder="Comment..."></input>
       </div>
     )
