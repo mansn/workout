@@ -1,0 +1,27 @@
+.comment {
+  font-size: 1rem;
+  background-color: white;
+  grid-area: comment;
+  margin-bottom: 1em;
+  border-radius: 0.25rem;
+  padding: 0.2rem 2.5rem 0.2rem 0;
+}
+
+.exercise {
+  display: grid;
+  grid-auto-rows: min-content;
+  list-style: none;
+  margin-bottom: 1.5em;
+}
+
+.input {
+  display: grid;
+  grid-template-areas:
+    'reps weight'
+    'comment comment';
+}
+
+.meta {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}

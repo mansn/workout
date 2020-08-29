@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Exercise from './Exercise'
+import Exercise from '../Exercise/Exercise'
 import axios from 'axios'
-import dummyData from '../mocks/workoutData.json'
-import DummyDataDisclaimer from '../components/DummyDataDisclaimer/DummyDataDisclaimer'
+import dummyData from '../../mocks/workoutData.json'
+import DummyDataDisclaimer from '../DummyDataDisclaimer/DummyDataDisclaimer'
+import Loading from '../Loading/Loading'
+import styles from './Workout.module.css'
 
 const Workout = ({ guestUser, isLoading }) => {
   const [workoutData, setWorkoutData] = useState([])
@@ -40,21 +42,17 @@ const Workout = ({ guestUser, isLoading }) => {
   return (
     <>
       {status === 'LOADING' ? (
-        <div className="loading-container">
-          <div className="loading-animate">🏋️‍♂️</div>
-          <p>Loading...</p>
-          <div className="loading-animate">🏋️‍♂️</div>
-        </div>
+        <Loading />
       ) : (
         <>
           {guestUser && <DummyDataDisclaimer />}
-          <div className="workout-program">
+          <div className={styles['workout-program']}>
             {workoutData.map(({ title, exercises }, workoutId) => {
               return (
-                <div className="workout" key={workoutId}>
-                  <fieldset>
-                    <legend>{title}</legend>
-                    <ul className="exercises">
+                <div className={styles.workout} key={workoutId}>
+                  <fieldset className={styles.fieldset}>
+                    <legend className={styles.legend}>{title}</legend>
+                    <ul className={styles.exercises}>
                       {exercises.data.map(
                         ({ title, weights, reps, sets, recommendedReps, currentResult, _id }) => {
                           return (

@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import LoginButton from '../LoginButton/LoginButton'
 import LogoutButton from '../LogoutButton/LogoutButton'
+import styles from './Auth.module.css'
 
 const Loading = () => (
   <svg
@@ -41,7 +42,7 @@ const Auth = () => {
   const { isAuthenticated, isLoading } = useAuth0()
 
   return (
-    <div className="auth">
+    <div className={styles.auth}>
       {isLoading ? <Loading /> : !isAuthenticated ? <LoginButton /> : <LogoutButton />}
     </div>
   )
