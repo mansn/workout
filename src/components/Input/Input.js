@@ -31,7 +31,7 @@ const Input = ({
     <div style={{ gridArea: `${name}` }}>
       <label htmlFor={id}>
         <input
-          className={styles.input}
+          className={[styles.input, styles[`input-${unit}`]].join(' ')}
           name={id}
           id={id}
           inputMode="numeric"
@@ -41,7 +41,7 @@ const Input = ({
           onChange={updateFieldValue}
         />
       </label>
-      <span style={{ marginLeft: -2.2 + 'rem', color: 'black' }}>{unit}</span>
+      <span className={styles[unit]}>{unit}</span>
     </div>
   )
 }

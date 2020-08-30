@@ -1,0 +1,53 @@
+.fieldset {
+  border-radius: 0.25rem;
+  padding: 0 1em;
+  transition: border-color 0.2s ease-out;
+}
+
+.fieldset:hover {
+  border-color: red;
+  transition: border-color 0s;
+}
+
+.fieldset h3 {
+  margin-bottom: 0.5em;
+}
+
+.legend {
+  font-size: 1.2rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.exercises {
+  display: grid;
+  grid-gap: 0 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+@media screen and (min-width: 1024px) {
+  .workout-program {
+    grid-area: workout-program;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .workout {
+    display: grid;
+    place-content: baseline center;
+    margin-right: 2em;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .exercises {
+    grid-template-columns: 1fr;
+  }
+}

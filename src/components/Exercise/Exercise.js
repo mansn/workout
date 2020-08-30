@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import Input from './Input/Input'
-import SaveButton from './SaveButton'
+import Input from '../Input/Input'
+import SaveButton from '../SaveButton/SaveButton'
+import styles from './Exercise.module.css'
 
 const Exercise = ({
   title,
@@ -56,7 +57,7 @@ const Exercise = ({
 
   for (let i = 0; i < currentResult.data.length; i++) {
     inputFields.push(
-      <div className="exercise-input" key={`${title}-set-${i}`}>
+      <div className={styles.input} key={`${title}-set-${i}`}>
         <Input
           name="reps"
           id={`${title}-reps-${i}`}
@@ -80,14 +81,14 @@ const Exercise = ({
           setWorkoutData={setWorkoutData}
           setModified={setModified}
         />
-        <input placeholder="Comment..."></input>
+        <input className={styles.comment} placeholder="Comment..." />
       </div>
     )
   }
   return (
     <>
-      <li className="exercise">
-        <div className="exercise-meta">
+      <li className={styles.exercise}>
+        <div className={styles.meta}>
           <h3>{`${title}`}</h3>
           <h3>{`(${sets}x ${recommendedReps.min}-${recommendedReps.max})`}</h3>
         </div>
