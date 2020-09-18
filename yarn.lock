@@ -1265,7 +1265,7 @@
     dom-accessibility-api "^0.5.1"
     pretty-format "^26.4.2"
 
-"@testing-library/jest-dom@^5.11.4":
+"@testing-library/jest-dom@5.11.4":
   version "5.11.4"
   resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.4.tgz#f325c600db352afb92995c2576022b35621ddc99"
   integrity sha512-6RRn3epuweBODDIv3dAlWjOEHQLpGJHB2i912VS3JQtsD22+ENInhdDNl4ZZQiViLlIfFinkSET/J736ytV9sw==
@@ -1279,7 +1279,7 @@
     lodash "^4.17.15"
     redent "^3.0.0"
 
-"@testing-library/react@^11.0.4":
+"@testing-library/react@11.0.4":
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-11.0.4.tgz#c84082bfe1593d8fcd475d46baee024452f31dee"
   integrity sha512-U0fZO2zxm7M0CB5h1+lh31lbAwMSmDMEMGpMT3BUPJwIjDEKYWOV4dx7lb3x2Ue0Pyt77gmz/VropuJnSz/Iew==
@@ -1287,7 +1287,7 @@
     "@babel/runtime" "^7.11.2"
     "@testing-library/dom" "^7.24.2"
 
-"@testing-library/user-event@^12.1.2":
+"@testing-library/user-event@12.1.5":
   version "12.1.5"
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.1.5.tgz#b2a94b8b3c1a908cc1c425623b11de63b20bb837"
   integrity sha512-FzTnKvb0KC4T84G6uTx971ja8OOqLlsprzWbeRyd8f1MDwbcLIFgx0Hyr56izY9m9y2KwHGVKeVEkTPslw32lw==
@@ -3924,7 +3924,7 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   dependencies:
     postcss "^7.0.14"
 
-identity-obj-proxy@^3.0.0:
+identity-obj-proxy@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/identity-obj-proxy/-/identity-obj-proxy-3.0.0.tgz#94d2bda96084453ef36fbc5aaec37e0f79f1fc14"
   integrity sha1-lNK9qWCERT7zb7xarsN+D3nx/BQ=
@@ -4721,7 +4721,7 @@ jest-worker@^26.3.0:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-jest@^26.4.2:
+jest@26.4.2:
   version "26.4.2"
   resolved "https://registry.yarnpkg.com/jest/-/jest-26.4.2.tgz#7e8bfb348ec33f5459adeaffc1a25d5752d9d312"
   integrity sha512-LLCjPrUh98Ik8CzW8LLVnSCfLaiY+wbK53U7VxnFSX7Q+kWC4noVeDvGWIFw0Amfq1lq2VfGm7YHWSLBV62MJw==
