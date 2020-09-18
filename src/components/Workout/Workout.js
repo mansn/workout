@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Exercise from '../Exercise/Exercise'
 import axios from 'axios'
-import dummyData from '../../mocks/workoutData.json'
+import dummyData from '../../__mocks__/workoutData.json'
 import DummyDataDisclaimer from '../DummyDataDisclaimer/DummyDataDisclaimer'
 import Loading from '../Loading/Loading'
 import styles from './Workout.module.css'
