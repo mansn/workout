@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Link } from '@reach/router'
 import { hot } from 'react-hot-loader'
 import './App.css'
-import Workout from './components/Workout/Workout'
+import WorkoutProgram from './components/WorkoutProgram/WorkoutProgram'
 import { useAuth0 } from '@auth0/auth0-react'
 import Auth from './components/Auth/Auth'
 import styles from './App.module.css'
@@ -12,10 +12,10 @@ function App() {
 
   const UnauthenticatedContent = () => (
     <>
-      <Workout isLoading={isLoading} guestUser={true} />
+      <WorkoutProgram isLoading={isLoading} guestUser={true} />
     </>
   )
-  const AuthenticatedContent = () => <Workout isLoading={isLoading} />
+  const AuthenticatedContent = () => <WorkoutProgram isLoading={isLoading} />
 
   const Content = () => (
     <div className={styles.main}>

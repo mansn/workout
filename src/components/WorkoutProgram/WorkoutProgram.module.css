@@ -1,0 +1,7 @@
+@media screen and (min-width: 1024px) {
+  .workout-program {
+    grid-area: workout-program;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
