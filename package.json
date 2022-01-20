@@ -23,7 +23,7 @@
     "@babel/cli": "7.12.1",
     "@babel/core": "7.12.3",
     "@babel/plugin-transform-react-jsx-source": "7.12.1",
-    "@babel/preset-env": "7.12.1",
+    "@babel/preset-env": "7.16.10",
     "@babel/preset-react": "7.12.1",
     "@testing-library/jest-dom": "5.11.5",
     "@testing-library/react": "11.1.0",
